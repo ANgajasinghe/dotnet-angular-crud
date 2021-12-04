@@ -1,0 +1,17 @@
+<div class="container mb-4">
+  <div class="text-center mt-5">
+    <h1> Big City Toys House </h1>
+    <!--  all categories-->
+
+    <div class="btn-group mt-4" role="group" aria-label="Basic example" *ngFor="let productCategoryName of productCategoryNames">
+      <a [routerLink]="[productCategoryName.id]" type="button" class="btn btn-primary m-2">{{productCategoryName.name}}</a>
+    </div>
+  </div>
+
+
+  <router-outlet></router-outlet>
+
+  <app-cart></app-cart>
+
+
+</div>

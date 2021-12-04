@@ -1,0 +1,36 @@
+<div class="mt-5" *ngIf="cartItems.length > 0">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Unit Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Total</th>
+      <th scope="col">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cartItem of cartItems;let no =index;">
+      <th scope="row">{{no + 1}}</th>
+      <td>{{cartItem.product.name}}</td>
+      <td>{{cartItem.product.unitPrice}}</td>
+      <td> <input [value]="cartItem.quantity" (input)="onUpdateCart(no , cartItem, $event.target)"> </td>
+      <td>{{cartItem.price}}</td>
+      <td>
+        <button class="text-danger" (click)="onProductDelete(no)"> Delete</button>
+      </td>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <hr>
+
+  <button class="btn btn-primary" (click)="onSaveCart()"> Save All </button>
+
+
+</div>
+
+
+

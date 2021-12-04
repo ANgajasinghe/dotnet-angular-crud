@@ -1,0 +1,7 @@
+<h3 class="text-primary mt-5"> Products </h3>
+
+<div class="row">
+  <div class="col-sm-3" *ngFor="let product of products">
+    <app-product [product]="product"></app-product>
+  </div>
+</div>
